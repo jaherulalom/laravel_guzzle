@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'WelcomeController@index');
+Route::get('/response', 'WelcomeController@getApi');
+
+Route::get('myform/ajax/{id}',array('as'=>'myform.ajax','uses'=>'WelcomeController@contributions'));
+
+
